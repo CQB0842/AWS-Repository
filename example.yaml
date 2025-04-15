@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Sample S3 Bucket
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Description: for code commit and code pipeline
+    Properties:
+      BucketName: my-sample-bucket-cqb-demo
