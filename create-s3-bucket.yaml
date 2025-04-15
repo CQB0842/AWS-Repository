@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create a simple S3 bucket for testing.
+
+Resources:
+  MyTestS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-sample-bucket-cqb-demo
+      AccessControl: PublicRead
+
+Outputs:
+  BucketName:
+    Description: Name of the S3 bucket
+    Value: !Ref MyTestS3Bucket
+  BucketURL:
+    Description: URL of the S3 bucket
+    Value: !Sub "https://s3.${AWS::Region}.amazonaws.com/${MyTestS3Bucket}"
